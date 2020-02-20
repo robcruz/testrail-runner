@@ -4,7 +4,12 @@ const url = "https://stamps.testrail.io/index.php?/api/v2/get_case/4930"
 
 fetch(url, {
   headers: {
-    Authorization: "Basic " + username + ":" + apiKey,
+    user: username,
+    password: apiKey,
     "Content-Type": "application/json"
-  }
-}).then(res => console.log(res))
+  },
+  mode: 'no-cors'
+})
+  .then(res => console.log(res))
+  .catch(err => console.log(err))
+
